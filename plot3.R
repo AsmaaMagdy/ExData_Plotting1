@@ -9,6 +9,7 @@ datetime <- strptime(paste(dataToUse$Date,dataToUse$Time), "%d/%m/%Y %H:%M:%S")
 dataToUse<-cbind(datetime,dataToUse)
 
 # Generate plot-3
+par(mfrow=c(1,1), mar=c(5.1 4.1 4.1 2.1))
 with(dataToUse,plot(dataToUse$datetime,dataToUse$Sub_metering_1, xlab= "", ylab ="Energy sub metering", type = "n"))
 
 with(subset(dataToUse,), lines(dataToUse$datetime,dataToUse$Sub_metering_1 ,col = "black"))
